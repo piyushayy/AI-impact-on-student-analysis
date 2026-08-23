@@ -1,11 +1,12 @@
-# 📊 AI Impact on Students - Exploratory Data Analysis
+# 📊 AI Impact on Students - Exploratory Data Analysis & Tableau Dashboard
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-green)
 ![Seaborn](https://img.shields.io/badge/Visualization-Seaborn-orange)
+![Tableau](https://img.shields.io/badge/BI-Tableau-e97627)
 ![Status](https://img.shields.io/badge/Project-Completed-success)
 
-This repository contains a comprehensive Exploratory Data Analysis (EDA) of the **AI Impact on Students** dataset. The analysis explores how Generative AI tools affect university students' academic performance, study habits, burnout risk, and exam anxiety.
+This repository contains a comprehensive Exploratory Data Analysis (EDA) of the **AI Impact on Students** dataset, extended into a 12-sheet interactive Tableau dashboard. The analysis explores how Generative AI tools affect university students' academic performance, study habits, burnout risk, and exam anxiety — first through Python/statistical analysis, then through a business-facing BI dashboard.
 
 ---
 
@@ -30,6 +31,13 @@ AI-Impact-on-Students-EDA/
 │   ├── anxiety_violinplot.png
 │   └── correlation_heatmap.png
 │
+├── tableau/                             # Interactive Tableau dashboard
+│   ├── AI_Student_Impact_Dashboard.twbx # Full packaged workbook (12 sheets, 3 dashboards)
+│   └── images/                          # Dashboard screenshots
+│       ├── dashboard_1_overview.png
+│       ├── dashboard_2_usage_burnout.png
+│       └── dashboard_3_policy_institutional.png
+│
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
@@ -46,10 +54,11 @@ AI-Impact-on-Students-EDA/
 4. **Compare Free vs. Paid Subscriptions:** Contrast academic performance between free users and premium AI tool subscribers.
 5. **Explore Skill Retention:** Identify which AI use cases (e.g. coding, ideation, copywriting) retain skills best.
 6. **Examine Exam Anxiety:** Investigate the relationship between traditional study hours and exam anxiety.
+7. **Translate Findings into BI:** Turn the statistical analysis into a stakeholder-facing, filterable Tableau dashboard.
 
 ---
 
-## 📈 Visualizations & Insights
+## 📈 Python EDA — Visualizations & Insights
 
 ### 1. Distribution of Weekly Generative AI Usage Hours
 This chart displays how many hours per week students spend on Generative AI tools.
@@ -81,6 +90,40 @@ A heatmap demonstrating relationships between numerical features such as traditi
 
 ---
 
+## 📊 Interactive Tableau Dashboard
+
+The EDA findings above were extended into a **12-sheet interactive Tableau dashboard** across 3 stakeholder-facing views, letting non-technical viewers filter and explore the data themselves rather than reading static charts.
+
+📁 [View the full dashboard folder](tableau/) — includes the packaged workbook (`.twbx`) and screenshots below.
+
+### Dashboard 1 — Overview, GPA by Major, GenAI Usage & Performance, Burnout
+![Dashboard 1](tableau/images/dashboard_1_overview.png)
+
+- KPI scorecards: 50,000 students, avg. 8 weekly GenAI hours, avg. 3.0 post-semester GPA, 24.97% high burnout rate
+- GPA comparison (pre vs. post-semester) broken down by major category
+- AI dependency vs. skill retention, colored by major
+- Burnout rate by major category (STEM highest at 30%, Humanities lowest at 20.74%)
+
+### Dashboard 2 — AI Dependency, Tool Diversity, Skill Retention, Use Case
+![Dashboard 2](tableau/images/dashboard_2_usage_burnout.png)
+
+- AI dependency vs. traditional study hours
+- Tool diversity vs. weekly GenAI hours
+- Skill retention score vs. AI dependency
+- AI dependency broken down by primary use case (copywriting, debugging, ideation, etc.)
+
+### Dashboard 3 — Usage by Year of Study, Institutional Policy, Academic Performance
+![Dashboard 3](tableau/images/dashboard_3_policy_institutional.png)
+
+- Weekly GenAI usage by major category and year of study (freshman → senior)
+- AI dependency across institutional policy types (actively encouraged, allowed with citation, strict ban)
+- Academic performance (GPA) vs. AI dependency
+- Traditional study hours vs. AI usage
+
+> **Note:** A live Tableau Public link will be added here once publishing is unblocked on my network. The full workbook file is available in `tableau/AI_Student_Impact_Dashboard.twbx` for anyone with Tableau Desktop who wants to open it directly.
+
+---
+
 ## 🛠️ Installation & Usage
 
 To run the analysis locally, follow these steps:
@@ -102,6 +145,9 @@ To run the analysis locally, follow these steps:
    ```bash
    jupyter notebook notebooks/AI_Impact_on_Students_EDA.ipynb
    ```
+
+4. **Open the Tableau Dashboard:**
+   Open `tableau/AI_Student_Impact_Dashboard.twbx` in Tableau Desktop or Tableau Public to interact with it directly.
 
 ---
 
